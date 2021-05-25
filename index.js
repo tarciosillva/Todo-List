@@ -8,7 +8,7 @@ app.use(express.json())
 app.use(router)
 
 app.get('/', (request, response)=>{
-    response.send("Hellho World")
+    response.send("API Todo-List")
 })
 
 const port = 3000

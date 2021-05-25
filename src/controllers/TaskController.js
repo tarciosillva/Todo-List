@@ -1,4 +1,3 @@
-const { response } = require('express')
 const database = require('../database/connection')
 
 class TaskController {
@@ -36,9 +35,9 @@ class TaskController {
 
     updateTask(request, response) {
         const id = request.params.id
-        var {description} = request.body.description
-
-        database.where({id:id}).update({description:description}).table("tasks").then(data=>{
+        const { task } = request.body
+        
+        database.where({id:id}).update({task:task}).table("tasks").then(data=>{
             response.json({data})
         }).catch(error=>{
             response.json(error)
